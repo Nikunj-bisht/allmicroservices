@@ -1,0 +1,7 @@
+services:
+  limits-service:
+    image: docker.io/firstmicro/demo:v1
+    mem_limit: 700m
+    ports:
+      - "8000:8000"
+

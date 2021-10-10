@@ -7,26 +7,32 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="urban-clap-api" />
-        <module name="api-gateway" />
         <module name="fmicro" />
+        <module name="loabalancer" />
+        <module name="loadbalancer" />
+        <module name="balance" />
+        <module name="api-gateway" />
         <module name="demo" />
-        <module name="Loadbalancer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="11" />
+      <module name="balance" target="11" />
       <module name="demo" target="11" />
       <module name="fmicro" target="11" />
-      <module name="Loadbalancer" target="11" />
+      <module name="loabalancer" target="11" />
+      <module name="loadbalancer" target="11" />
       <module name="urban-clap-api" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Loadbalancer" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
+      <module name="balance" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="fmicro" options="-parameters" />
+      <module name="loabalancer" options="-parameters" />
+      <module name="loadbalancer" options="-parameters" />
     </option>
   </component>
 </project>
