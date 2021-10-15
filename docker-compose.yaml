@@ -4,4 +4,20 @@ services:
     mem_limit: 700m
     ports:
       - "8000:8000"
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE:http://naming-server:8761/eureka
+
+  naming-server:
+    image: docker.io/balanceload/balance:v1
+    mem_limit: 700m
+    ports:
+      - "8761:8761"
+
+  first_micro:
+    image: docker.io/sendermicro/fmicro:v1
+    mem_limit: 700m
+    ports:
+      - "8081:8081"
 
