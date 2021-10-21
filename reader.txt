@@ -1,1 +1,1 @@
- // docker image for load-balancerdocker.io/balanceload/balance:v1// docker image for ratedocker.io/firstmicro/demo:v1// request sender microservice imagedocker.io/sendermicro/fmicro:v1
+ // docker image for load-balancerdocker.io/balanceload/balance:v1// docker image for ratedocker.io/firstmicro/demo:v1// request sender microservice imagedocker.io/sendermicro/fmicro:v1// apigateway imagedocker.io/gateway/api-gateway:v1

@@ -7,7 +7,9 @@ services:
     depends_on:
       - naming-server
     environment:
-      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE:http://naming-server:8761/eureka
+      - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://naming-server:8761/eureka"
+      - "SPRING_PROFILES_ACTIVE=eureka"
+
 
   naming-server:
     image: docker.io/balanceload/balance:v1
@@ -18,6 +20,25 @@ services:
   first_micro:
     image: docker.io/sendermicro/fmicro:v1
     mem_limit: 700m
+
+    depends_on:
+      - naming-server
     ports:
       - "8081:8081"
+    environment:
+      - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://naming-server:8761/eureka"
+      - "SPRING_PROFILES_ACTIVE=eureka"
+
+
+  api-gateway:
+    image: docker.io/gateway/api-gateway:v1
+    mem_limit: 700m
+    depends_on:
+      - naming-server
+    ports:
+      - "8765:8765"
+    environment:
+      - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://naming-server:8761/eureka"
+
+
 
